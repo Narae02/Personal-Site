@@ -1,0 +1,96 @@
+@charset "utf-8";
+footer{
+  width: 100%;
+  background-color: #eeeeee;
+}
+footer div.block_center{
+  width: 1200px;
+  height: 220px;
+  padding-top: 30px;  
+  padding: 15px 0;
+  border-top: 1px solid #fff;
+}
+footer div.block_center ul{
+  float: left;
+  font-size: 1.071428rem;
+}
+footer div.block_center ul li{
+  display: inline-block;
+}
+footer div.block_center ul li a{
+  padding:  20px 15px;
+  line-height: 2.2;
+  display: block;
+  color: #868383;
+}
+footer div.block_center ul li:nth-child(1) a{
+  padding:  20px 15px 20px 0;
+}
+footer div.block_center ul li:nth-child(2) a{
+  color: #000;  
+}
+footer div.block_center>span{
+  float: right;
+  display: flex;  
+}
+footer div.block_center>span a{
+  line-height: 1.5;
+  margin: 0 3px;
+  display: inline-block;
+  padding: 10px 12px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #c8c8c8ed;
+  color: #3f3f3fed;
+}
+footer div.block_center>span a+a{
+ padding-right: 25px;   
+ position: relative;
+}
+footer div.block_center>span a+a:before,footer div.block_center>span a+a:after{
+  position: absolute;
+  right: 10px;
+}
+footer div.block_center>span a+a:before{
+  content: ">";
+  transform: rotate(-90deg) scaleY(2);
+  top: 6px;
+}
+footer div.block_center>span a+a:after{
+  content: "I";
+  transform: scaleY(1.2);
+}
+footer div.block_center h1{
+  clear: both;
+  width: 135px;
+  height: 40px;
+  float: left;
+  width: 16%;
+  background-image: url(https://cloud.eais.go.kr/images/common/molit_logo.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  text-indent: -9999px;
+}
+footer div.block_center address{
+  width: 84%;
+  float: right;
+  line-height: 1.6;
+  color: #868383;
+}
+footer div.block_center address span{
+  float: right;
+  text-align: right;
+}
+footer div.block_center address span strong{
+  color: #008aef;
+}
+footer div.block_center .copyright{
+  clear: both;  
+  margin-left: 16%;
+  position: relative;
+  top: -17px;
+  color: #868383;
+}
+footer div.block_center .w3c_valid{
+  float: right;
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=decice-width, intial-scale=1">
+  <title>FURSYS</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/fade.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/ham.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link media="screen and (max-width:1200px)" rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+  <script type="text/javascript" src="js/showroom.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // 타이틀 슬라이드
+      $("#title").append("<span class='dot'><a href='' data-t='0'></a><a href='' data-t='1'></a><a href='' data-t='2'></a><a href='' data-t='3'></a><a href='' data-t='4'></a></span>");
+      $("#title span.dot a:eq(0)").addClass("currentT");
+
+      var tn=1;
+      var tn2=1;
+      var ttt=0;
+      $("#title ul li:eq(0)").addClass("zindex2");
+      var count=$("#title li").length;
+
+      var playFade=setInterval(function(){
+        if(ttt==0){
+          if(tn<count){
+            $("#title ul li:eq("+tn+")").addClass("zindex2").hide(0).fadeIn(1500);
+            $("#title ul li:eq("+tn+")").siblings().removeClass("zindex2 zindex1");
+            $("#title ul li:eq("+tn+")").prev().addClass("zindex1");
+            $("#title span.dot a:eq("+tn+")").addClass("currentT");
+            $("#title span.dot a:eq("+tn+")").siblings().removeClass("currentT");
+            tn=tn+tn2;
+          }else if(tn==count){
+            tn=0;
+          }
+        }else{
+          clearInterval(playFade);
+        }
+      },3000);
+
+      // 타이틀이미지 슬라이딩
+      $("#title span.dot").css("z-index",5);
+      var h=$("#title ul li").outerHeight();
+      $("#title ul").css("height",h);
+
+      $("#title span.dot a").click(
+        function(){
+          //tn=$(this).attr("data-t");
+          ttt=1;
+          tn=$(this).index();
+          $("#title ul li:eq("+tn+")").addClass("zindex2").hide(0).fadeIn(1500);
+          $("#title ul li:eq("+tn+")").siblings().removeClass("zindex2 zindex1");
+          $("#title ul li:eq("+tn+")").prev().addClass("zindex1");
+          $("#title span.dot a:eq("+tn+")").addClass("currentT");
+          $("#title span.dot a:eq("+tn+")").siblings().removeClass("currentT");
+          return false;
+        }
+      );
+      $("#title span.dot a").mouseleave(
+        function(){
+          tt=0;
+        }
+      );
+
+    });
+  </script>
+</head>
+<body>
+  <!-- 상단영역 -->
+  <header>
+    <h1><a href="index.html">(주)퍼시스</a></h1>
+    <ul class="gnb">
+      <li>
+        <h2><a href="#">제품정보</a></h2>
+        <div class="submenu">
+          <div class="submenuin">
+            <h3>오피스</h3>
+            <ul>
+              <li><a href="#">데스크 & 패널</a></li>
+              <li><a href="#">프리미어클래스</a></li>
+              <li><a href="#">중역용의자</a></li>
+              <li><a href="#">사무용의자</a></li>
+              <li><a href="#">회의용의자</a></li>
+              <li><a href="#">로비의자</a></li>
+              <li><a href="#">회의&강의 시스템</a></li>
+              <li><a href="#">소파</a></li>
+              <li><a href="#">소파 테이블</a></li>
+              <li><a href="#">도서관&기숙사</a></li>
+              <li><a href="#">액세서리</a></li>
+            </ul>
+          </div>
+          <div class="submenuin">
+            <h3>헬스케어</h3>
+            <ul>
+              <li><a href="#">병실</a></li>
+              <li><a href="#">진료실</a></li>
+              <li><a href="#">간호스테이션</a></li>
+              <li><a href="#">업무공간</a></li>
+              <li><a href="#">휴게대기</a></li>
+            </ul>
+          </div>
+          <div class="submenuin">
+            <h3>랩</h3>
+            <ul>
+              <li><a href="#">실험대</a></li>
+              <li><a href="#">기초장비</a></li>
+              <li><a href="#">초중고 과학실</a></li>
+              <li><a href="#">의자</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h2><a href="#">컨설팅</a></h2>
+        <ul class="submenu">
+          <li><a href="#">사무환경컨설팅 소개</a></li>
+          <li><a href="#">컨설팅 문의</a></li>
+        </ul>
+      </li>
+      <li>
+        <h2><a href="#">오피스 컨설턴트</a></h2>
+        <ul class="submenu">
+          <li><a href="#">오피스 컨설턴트 소개</a></li>
+          <li><a href="#">혜택 및 교육과정</a></li>
+          <li><a href="#">OC 활동</a></li>
+          <li><a href="#">모집공고 및 Q&A</a></li>
+        </ul>
+      </li>
+      <li>
+        <h2><a href="#">납품실적</a></h2>
+          <ul class="submenu">
+            <li><a href="#">주요 납품사례</a></li>
+            <li><a href="#">클라이언트 목록</a></li>
+          </ul>
+      </li>
+      <li>
+        <h2><a href="#">리서치</a></h2>
+          <ul class="submenu">
+            <li><a href="#">R & D 센터</a></li>
+            <li><a href="#">퍼시스 북스</a></li>
+          </ul>
+      </li>
+      <li>
+        <h2><a href="company.html">회사소개</a></h2>
+        <ul class="submenu">
+          <li><a href="company.html">퍼시스그룹</a></li>
+          <li><a href="company.html">퍼시스</a></li>
+          <li><a href="company.html">퍼시스 네트워크</a></li>
+          <li><a href="company.html">미디어센터</a></li>
+          <li><a href="company.html">IR</a></li>
+        </ul>
+      </li>
+      <li>
+        <h2><a href="#">고객서비스</a></h2>
+        <ul class="submenu">
+          <li><a href="#">상담 신청</a></li>
+          <li><a href="#">카탈로그 신청</a></li>
+          <li><a href="#">A/S 신청</a></li>
+          <li><a href="#">쇼룸안내</a></li>
+          <li><a href="#">대리점 안내</a></li>
+          <li><a href="#">해외수출 프로그램 안내</a></li>
+          <li><a href="#">협력업체등록안내</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="enb">
+      <li><a href="#">인재채용</a></li>
+      <li><a href="#">GLOBAL FURSYS</a></li>
+      <li><a href="#"><i class="ion-ios-search"></i>제품파인더</a></li>
+    </ul>
+    <span class="ham"></span>
+  </header>
+  
+  <!-- 타이틀영역 -->
+  <div id="title">
+    <ul>
+      <li>
+        <h2>BRAND STORY</h2>
+        <h3>사무환경 프로젝트 <br> #4 퍼시스본사</h3>
+        <a href="#">자세히 보러가기</a>
+      </li>
+      <li>
+        <h2>FURSYS BOOKS</h2>
+        <h3>사무환경이 오피스를 만든다<br>VOL.2 오피스 일상을 바꾸다</h3>
+        <a href="#">자세히 보러가기</a>
+      </li>
+      <li>
+        <h2>FURSYS NEWSLETTER</h2>
+        <h3>오피스 속 꼭 필요한 소식들이 궁금하다면?<br>지금, 뉴스레터를구독하세요.</h3>
+        <a href="#">신청하기</a>
+      </li>
+      <li>
+        <h2>CAMPAIGN</h2>
+        <h3>사무환경이 문화를 만듭니다</h3>
+        <a href="#">자세히 보러가기</a>
+      </li>
+      <li>
+        <h2>BRAND STORY</h2>
+        <h3>사무환경 프로젝트 #3 스튜디오</h3>
+        <a href="#">자세히 보러가기</a>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- 내용영역 -->
+  <main>
+    
+    <div id="issues">
+      <h2 class="h2">ISSUES</h2>
+      <p class="hp">퍼시스의 다양한 소식들을 만나보세요.</p>
+      <ul>
+        <li class="left">
+          <a href="#">
+            <h3 class="h3">사무환경 컨설팅</h3>
+            <p>퍼시스의 노하우와 전문분석 툴을 통해 <span>전문화된 공간계획을 제안합니다.</span></p>
+            <p class="go">자세히 보러가기 ></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3 class="h3">NEW PRODUCT</h3>
+            <p>스마트 워킹 스토리지 (SWS) <span>스마트 워크를 위한 개인 사물함</span></p>
+            <p class="go">자세히 보러가기 ></p>
+          </a>
+        </li>
+        <li class="right">
+          <a href="#">
+            <h3 class="h3">NEWS</h3>
+            <p>플레이웍스 (PLAYWORKS) <span>IF, 레드닷 디자인 어워드 수상</span></p>
+            <p class="go">자세히 보러가기 ></p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- office -->
+    <div id="office">
+      <h2 class="h2">office we love.</h2>
+      <p class="hp">Vol.6 '밀레니얼 세대의 워킹라이프스타일과  사무환경'발간</p>
+      <a href="#">자세히 보러가기</a>
+    </div>
+    <!-- showroom -->
+    <div id="showroom">
+      <h2 class="h2">SHOWROOM</h2>
+      <p class="hp">퍼시스의 제품을 가장 가까이에서 만나보세요.</p>
+      <ul class="list">
+        <li><a href="#">서울 본사쇼룸</a></li>
+        <li><a href="#">광화문센터</a></li>
+        <li><a href="#">부산센터</a></li>
+        <li><a href="#">대구센터</a></li>
+        <li><a href="#">대전센터</a></li>
+        <li><a href="#">광주센터</a></li>
+      </ul>
+      <a href="#" class="go">쇼룸 전체보기</a>
+      <ul class="detail">
+        <li>
+          <h3 class="hide">서울 본사쇼룸</h3>
+          <img src="img/showroom_1.jpg" alt="서울 본사쇼룸">
+        </li>
+        <li>
+          <h3 class="hide">광화문센터</h3>
+          <img src="img/showroom_2.jpg" alt="광화문센터 쇼룸">
+        </li>
+        <li>
+          <h3 class="hide">부산센터</h3>
+          <img src="img/showroom_3.jpg" alt="부산센터 쇼룸">
+        </li>
+        <li>
+          <h3 class="hide">대구센터</h3>
+          <img src="img/showroom_4.jpg" alt="대구센터 쇼룸">
+        </li>
+        <li>
+          <h3 class="hide">대전센터</h3>
+          <img src="img/showroom_5.jpg" alt="대전센터 쇼룸">
+        </li>
+        <li>
+          <h3 class="hide">광주센터</h3>
+          <img src="img/showroom_6.jpg" alt="광주센터 쇼룸">
+        </li>
+      </ul>
+      <button type="button" name="button" class="counsel">
+        <i class="ion-ios-chatbubble-outline"></i>1:1상담
+      </button>
+    </div>
+    <!-- 뉴스 -->
+    <div id="news">
+      <h2 class="h2">NEWS</h2>
+      <p class="hp">퍼시스의 새로운 소식들</p>
+      <ul>
+        <li>
+          <h3>공지사항</h3>
+          <a href="#">[공지] 퍼시스 개인정보처리방침 개정 안내 </a>
+          <time datetime="2020-12-11">2020-12-11</time>
+        </li>
+        <li>
+          <h3>공지사항</h3>
+          <a href="#">[공지] 퍼시스 개인정보처리방침 개정 안내 </a>
+          <time datetime="2020-11-05">2020-11-05</time>
+        </li>
+        <li>
+          <h3>퍼시스활동</h3>
+          <a href="#">퍼시스, 부산센터 쇼룸에 친환경 ‘나아바 그린월’ 공간 조성 </a>
+          <time datetime="2020-09-17">2020-09-17</time>
+        </li>
+        <li>
+          <h3>퍼시스활동</h3>
+          <a href="#">퍼시스, 밀레니얼 워킹라이프스타일 다룬 사무환경 전문 매거진 ‘오피스 위 러브(Offic .. </a>
+          <time datetime="2020-09-17">2020-09-17</time>
+        </li>
+      </ul>
+      <a href="#" class="more">more</a>
+    </div>
+    <!-- case study -->
+    <div id="casestudy">
+      <h2 class="h2">CASE STUDY</h2>
+      <p class="hp">퍼시스와 함께한 공간 이야기</p>
+      <ul>
+        <li>
+          <a href="#">
+            <h3 class="h3">한국쓰리엠</h3>
+            <p>자율성과 유연성을 지원하는 오피스</p>
+            <p class="go hide">자세히 보러가기</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3 class="h3">카카오게임즈</h3>
+            <p>일상이 게임이 되는 곳</p>
+            <p class="go hide">자세히 보러가기</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3 class="h3">유니언워크</h3>
+            <p>밀레니얼 세대가 모여 일하는 새로운 공간</p>
+            <p class="go hide">자세히 보러가기</p>
+          </a>
+        </li>
+      </ul>
+      <a href="#" class="more"></a>
+    </div>
+    <!-- 사무환경 -->
+    <div id="officelife">
+      <div>
+        <h2>사무환경, 오피스 라이프에 대한 이야기</h2>
+        <a href="#">블로그 방문하기</a>
+      </div>
+    </div>
+    <!-- 퀵메뉴 -->
+    <div id="quickmenu">
+      <h2><a href="#">quickmenu</a></h2>
+      <ul>
+        <li><a href="#">1:1 상담문의</a></li>
+        <li><a href="#">A/S신청</a></li>
+        <li><a href="#">대리점 안내</a></li>
+        <li><a href="#">쇼룸 안내</a></li>
+        <li><a href="#">카탈로그신청</a></li>
+        <li><a href="#">블로그</a></li>
+        <li><a href="#">페이스북</a></li>
+        <li><a href="#">유튜브</a></li>
+      </ul>
+    </div>
+  </main>
+  <a href="#" class="top">SCROLL TO TOP</a>
+  <!-- 하단영역 -->
+  <footer>
+    <div class="f1">
+      <div class="f1in">
+        <div>
+          <h1>(주)퍼시스</h1>
+          <p>Copyright (c) 2020 Fursys Inc.<br>
+          All right reserved. </p>
+        </div>
+        <div>
+          <p>대표이사: 윤기언, 배상돈</p>
+          <adress>사업자번호: 215-81-20534<br>
+            주소: 138-857 / 서울특별시 송파구 오금로 311 (오금동 45-1) 퍼시스 빌딩<br>
+            대표번호: 02-443-9999</adress>
+        </div>
+        <div>
+          <p>A/S 대표번호: 1588-1244</p>
+          <p>매주 월~금요일: 09:30~17:30</p>
+          <p>(점심시간 12:30~13:30 / 토,일,공휴일 상담실 휴무)</p>
+        </div>
+        <div>
+          <ul>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">사이트맵</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="f2">
+      <ul class="banner">
+        <li><a href="#"><img src="https://www.fursys.com/fur_frt/images/main_renewal/fursys.jpg" alt=""></a></li>
+        <li><a href="#"><img src="https://www.fursys.com/fur_frt/images/main_renewal/iloom.jpg" alt=""></a></li>
+        <li><a href="#"><img src="https://www.fursys.com/fur_frt/images/main_renewal/sidiz.jpg" alt=""></a></li>
+        <li class="br"><a href="#"><img src="https://www.fursys.com/fur_frt/images/main_renewal/desker.jpg" alt=""></a></li>
+        <li><a href="#"><img src="https://www.fursys.com/fur_frt/images/main_renewal/slou.jpg" alt=""></a></li>
+        <li><a href="#"><img src="https://www.fursys.com/fur_frt/images/main_renewal/0801/alloso.png" alt=""></a></li>
+      </ul>
+      <ul class="sns">
+        <li><a href="#"><i>blog</i><span class="hide">네이버블로그</span></a></li>
+        <li><a href="#"><i class="ion-social-facebook"></i><span class="hide">페이스북</span></a></li>
+        <li><a href="#"><i class="ion-social-youtube"></i><span class="hide">유투브</span></a></li>
+        <li><a href="#"><i class="ion-social-instagram-outline"></i><span class="hide">인스타그램</span></a></li>
+      </ul>
+      <select name="" id="">
+        <option value="">FURSYS GROUP</option>
+        <option value="">일룸</option>
+        <option value="">시디즈</option>
+        <option value="">데스커</option>
+        <option value="">슬로우</option>
+        <option value="">알로소</option>
+        <option value="">바르스</option>
+        <option value="">목훈재단</option>
+      </select>
+    </div>
+  </footer>
+</body>
+</html>

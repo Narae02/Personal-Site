@@ -1,0 +1,815 @@
+@charset "UTF-8";
+.block{
+  display: block;
+}
+.block_center{
+  max-width:1200px;
+  margin:0 auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
+}
+.inline-block{
+  display: inline-block;
+}
+.h2{
+ font-size: 40px;
+ line-height: 1.3;
+ margin-bottom: 40px;
+ color: #f69314;
+}
+.h5{
+  font-size:18px;
+  color: #fff;
+  line-height: 4;
+}
+.hide{
+  display: none;
+}
+input:focus{
+  outline: none;
+}
+/* 상단영역----------------------------------- */
+header{
+ padding: 30px 0;
+ position: absolute;
+ width: 100%;
+ top: 0;
+ color: #fff;
+ background-color: #000;
+}
+header div{
+/*  overflow: hidden; */
+}
+header h1{
+  float: left;
+}
+header h1 a{
+  line-height: 2;
+  color:#fff;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: bold !important; 
+}
+header  a{
+  color: #ccc;
+}
+header ul.gnb{
+  float: right;
+}
+header  ul.gnb li{
+  display: inline-block;
+}
+header  ul.gnb li a{
+  display: block;
+  line-height: 2;
+  padding: 0 10px;
+}
+header  ul.gnb li a:hover{
+  color: #fff;
+}
+.currentmenu{ 
+  color: #fff;
+}
+/* 타이틀 영역----------------------------------------------- */
+#title{
+  text-align: center;
+  height: 87%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/hero_1.jpg);
+  background-color: rgba(57, 56, 56, 0.84);
+  background-blend-mode: multiply;
+  background-size: cover;
+  min-height: 400px;
+  background-position: center;
+  position: relative;
+  top: 100px;
+  left: 0;
+}
+#title h2{
+/*! padding-top: calc(50% - 20px); */
+  font-size: 42px;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0;
+}
+#title h2 span{
+  display: block;
+  font-size: 42px;
+  font-weight: 900 !important;;
+}
+#title p{
+  font-size: 22px;
+  width: 80%;
+  line-height: 1.6;
+}
+#title a{
+  font-size: 28px;
+  bottom: 30px;
+  position: absolute;
+  animation-name: down;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3s;
+  color: #fff;
+}
+@keyframes down{
+  0%{
+    bottom: 20px;
+  }
+  50%{
+    bottom: 30px;
+  }
+  100%{
+    bottom: 20px;
+  }
+}
+/* 메인 영역----------------------------------------------- */
+/* -------works */
+section{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+section#works{
+  text-align: center;
+  max-width: 100%;
+  background-color: #f8f9fa;
+}
+section#works h2{
+  text-align: center;
+  line-height: 1.6;
+}
+section#works ul.single-item-rtl{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+section#works ul.single-item-rtl li.workslist{
+  text-align: center;
+}
+section#works ul.single-item-rtl li.workslist h3{
+  font-size: 20px;
+  line-height: 2;
+}
+section#works ul.single-item-rtl li.workslist h3 ion-icon{
+  color: #f69314;
+  display: block;
+  margin: 0 auto;
+  font-size: 40px;
+  background-size: 100%;
+  height: 60px;
+}
+section#works ul.single-item-rtl li p{
+  font-size: 17px;
+  line-height: 1.6;
+  color: #8d7f7f;
+}
+/* slick화살표 */
+.slick-prev, .slick-next{
+  transform: scaleY(1.5) !important; 
+  top: 30% !important;
+}
+.slick-prev{
+  left: 0 !important;
+}
+.slick-next{
+  right: 0 !important;
+}
+.slick-prev::before{
+  content: "<" !important;
+  font-family: 'Playfair Display', serif !important; 
+}
+.slick-next::before{
+  content: ">" !important;
+  font-family: 'Playfair Display', serif !important;
+}
+section#works .slick-prev::before, section#works .slick-next::before,
+section#property .slick-prev::before, section#property .slick-next::before{
+  font-size: 34px;
+/*   line-height: 1; */
+/*   opacity: .75; */
+  color: #f4911261;
+}
+/* ----------property */
+section#property ul{
+  display: flex;
+  justify-content: space-between;
+}
+section#property ul li{
+  width: 24%;
+}
+section#property ul li img{
+  width: 100%;
+}
+section#property ul li img:hover{
+  box-shadow: 10px 40px 30px #ccc;
+}
+section#property ul li .prodiv{
+  padding: 10px;
+}
+section#property ul li .prodiv *:not(strong){
+  font-size: 13px;
+  color: #7e7373;
+  line-height: 2.5;
+}
+section#property ul li strong{
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+section#property ul li span{
+  line-height: 2;
+  border-left: 1.5px solid #ccc9c9;;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+section#property ul li span:nth-of-type(1){
+  border-left: none;
+  padding-left: 0;
+}
+section#property a{
+  display: block;
+  width: 200px;
+  text-align: center;
+  line-height: 2;
+  padding: 5px 50px;
+  background-color: #f69314;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 40px;
+  color: #fff;
+}
+section#property a:hover{
+  background-color: #04042e;
+  transition: all 0.5s;
+}
+/* slick화살표 */
+#property .slick-prev, #property .slick-next{
+  transform: scaleY(2) !important; 
+}
+/* ------------company */
+section#company .block_center{
+  display: flex;
+  flex-direction: row-reverse;
+}
+section#company .block_center>div{
+  width: 50%;
+}
+section#company .block_center>div.right{
+  padding-left: 10%;
+  box-sizing: border-box;
+  color: #848484;
+}
+section#company .block_center>div.right h2{
+  margin-bottom: 30px;
+}
+section#company .block_center>div.right p{
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+section#company .block_center>div.right p:nth-child(2){
+  font-size: 20px;
+}
+section#company .block_center>div.right p:nth-child(2) span{
+  display: block;
+}
+section#company .block_center>div.right ul{
+  line-height: 1.6;
+}
+section#company .block_center>div.right ul li{
+  line-height: 2.5;
+}
+section#company .block_center>div.right ul li::before{
+  content: "";
+  width: 12px;
+  height: 5px;
+  display: inline-block;
+  border-left: 2px solid #97c95d; 
+  border-bottom: 2px solid #97c95d; 
+  transform: rotate(-40deg);
+  margin-right: 15px;
+  vertical-align: 4px;
+}
+section#company .block_center>div.right a{
+  background-color: #f69314;
+  color: #fff;
+  width: 120px;
+  margin-top: 30px;
+  display: inline-block;
+  line-height: 2.5;
+  text-align: center;
+  padding: 0 10px;
+  border-radius: 50px;
+  text-transform: capitalize;
+  padding-bottom: 3px;
+}
+section#company .block_center>div.right a:hover{
+  background-color: #04042e;
+  transition: all 0.5s;
+}
+section#company .block_center>div.left figure img{
+  width: 100%;
+}
+section#company .block_center>div.left span{
+  text-align: center;
+  display: block;
+  position: relative;
+  top: -35px;
+}
+section#company .block_center>div.left span button{
+  background-color: #f69314;
+  border: none;
+  display: inline-block;
+  line-height: 4;
+  color: #fff; 
+  padding: 0 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+section#company .block_center>div.left span button:first-child{
+  border-radius: 5px 0 0 5px;
+  padding-left: 30px;
+}
+section#company .block_center>div.left span button:last-child{
+  border-radius: 0 5px 5px 0;
+  padding-right: 30px;
+}
+/* ---------------says */
+section#says{
+  text-align: center;
+}
+section#says p{
+  line-height: 2;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 36px;
+  color: #6f6f6f;
+}
+section#says p:nth-of-type(1){
+  font-style: oblique;
+  font-size: 23px;
+  /*! color: #6f6f6f; */
+}
+section#says p img{
+  width: 40px;
+  height: 40px;
+  vertical-align: -13px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+/* ------------contactus */
+section#contactus{
+  max-width: 100%;
+  background-color: #f8f9fa;
+}
+section#contactus .block_center{
+  overflow: hidden;
+}
+section#contactus h2{
+  text-align: center;
+}
+section#contactus form{
+  float: left;
+  width: 55%;
+  background-color: #fff;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+section#contactus form fieldset legend{
+  font-size: 26px;
+  line-height: 2;
+  padding-bottom: 20px;
+}
+section#contactus form fieldset span.inline-block{
+  width: 48%;
+}
+section#contactus form fieldset span.inline-block:nth-of-type(2){
+  float: right;
+}
+section#contactus form fieldset label{
+  display: block;
+  line-height: 2.5;
+}
+section#contactus form fieldset input{
+  width: 100%;
+  border:1px solid #ccc;
+  border-radius: 50px;
+  line-height: 3;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+section#contactus form fieldset input:hover{
+  border: 1px solid #f69314;
+}
+section#contactus form fieldset input:focus{
+ outline:none;
+}
+section#contactus form fieldset textarea{
+  width: 100%;
+  border-radius: 30px;
+  border:1px solid #ccc;
+  padding: 15px;
+  color: #423c3c;
+  margin-right: 20px;
+  box-sizing: border-box;
+/*   font-weight: bold; */
+}
+section#contactus form fieldset textarea:focus{
+  outline: none;
+}
+section#contactus form fieldset textarea:hover{
+  border: 1px solid #f69314;
+}
+section#contactus form fieldset button{
+  width: 30%;
+  margin: 0 auto;
+  display: inline-block;
+  background-color: #f69314;
+  color: #fff;
+  margin-top: 20px;
+  line-height: 2.5;
+  text-align: center;
+  border-radius: 50px;
+  text-transform: capitalize;
+  border: none;
+  font-size: 16px;
+}
+section#contactus form fieldset button:hover{
+  background-color: #04042e;
+  transition: all 0.5s;
+}
+section#contactus ul{
+  float: right;
+  width: 42%;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  /*! margin-left: 20px; */
+}
+section#contactus ul li h3{
+  color: #808080;
+  font-weight: bold;
+  line-height: 2;
+}
+section#contactus ul li p{
+  line-height: 1.6;
+  color: #f69314;
+  padding-bottom: 15px;
+}
+section#contactus ul li p:hover{
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3) ; 
+}
+section#contactus ul li:first-child p{
+  color: red;
+  color: #808080; 
+  text-shadow: none;
+}
+/* 하단 영역----------------------------------------------- */
+footer{
+  padding: 100px;
+  background-color: #333;
+}
+footer .block_center{
+  padding-bottom: 100px;
+}
+footer .fff{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #4e4e4e;
+}
+/* ------------1 */
+footer div.f1{
+  width: 50%;
+  padding-right: 10%;
+  box-sizing: border-box;
+}
+footer div.f1 p{
+  color: #6c6c6c;
+  line-height: 1.6;
+}
+/* ------------2 */
+footer div.f2{
+  width: 20%;
+}
+footer div.f2 ul li a{
+  color: #999;
+  line-height: 2;
+}
+/* ------------3 */
+footer div.f3{
+  width: 30%;
+}
+footer div.f3 form fieldset{
+  width: 300px;
+  height: 40px;
+  border-radius: 50px;
+}
+footer div.f3  form fieldset input{
+  width: 75%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 50px 0 0 50px;
+  border: none;
+  background-color: transparent;
+  color: #858585;
+  border: 1px solid #858585;
+}
+footer div.f3  form fieldset button{
+  width: 25%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 0 50px 50px 0;
+  background-color: #f69314;
+  border: none;
+  font-size: 16px;
+  /*! text-align: center; */
+  padding: 0 20px;
+}
+footer div.f3  form fieldset button:hover{
+  background-color: #fff;
+  transition: all 0.5s;
+}
+footer div.f3 div ul{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 75%;
+}
+footer div.f3 div ul li{
+  width: calc(100% / 4);
+  height: 30px;
+}
+footer div.f3 div ul li a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #858585;
+}
+footer div.f3 div ul li a:hover{
+  color: #fff;
+}
+footer div .copyright{
+  padding-top: 40px;
+  color: #6c6c6c;
+  text-align: center;
+  line-height: 1.5;
+}
+footer div .copyright span:before{
+  content: "";
+  background-image: url(../img/heart.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: #fff;
+}
+footer div .copyright a{
+  color: #999;
+}
+/* -----------------------반응형모드---------------------------- */
+/* 1200px-------------------- */
+@media screen and (max-width:1200px){
+  .block_center{
+    padding: 0 20px;
+  }
+  .ham{
+    display: block;
+    right: 20px;
+  }
+  .h2{
+    font-size: 30px;
+    text-align: center;
+  }
+   header ul.gnb{
+    display: none;
+  }
+  /* ----------타이틀   */
+  #title h2,#title h2 span{
+    font-size:3.5vw;
+  }
+  #title p{
+    font-size:1.833333vw;
+  }
+  section{
+    max-width: 800px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+/* ------------properties   */
+  section#property h2{
+    text-align: center;
+  }
+  section#property ul{ 
+    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  section#property ul li{
+    width:45%;
+  }
+  #property span.control {
+    right: 63px;
+    top: 497%;
+  }
+/*  ----------------company  */
+  section#company .block_center{    
+    flex-direction: column;
+  }
+  section#company .block_center > div{
+    width: 100%;
+    padding: 0 !important;
+  }
+  section#company .block_center > div.right p{
+    text-align: center;
+  }
+  section#company .block_center>div.right p:nth-child(2) span{
+    display: inline-block;
+  }
+  section#company .block_center > div.right ul{
+    width: 50%;
+    float: right;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  section#company .block_center > div.left{
+    width: 37%;
+    position: absolute;
+    top: 90px;
+    left: 69px;
+    transform: scale(0.5);
+  }
+  section#company .block_center > div.right a{
+    clear: both;
+    display: block;
+    margin: 0 auto;
+  }
+/*  ------------------contact  */
+ section#contactus form,section#contactus ul{
+   float: none;
+   width: 80%;
+   margin: 0 auto;
+  }
+  section#contactus form fieldset button{
+   display: block;
+  }
+  section#contactus ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+/*  -------------------footer  */
+  footer .fff{
+/*     flex-direction: column; */
+  }
+  footer div.f1,footer div.f2,footer div.f3{
+    width: 80%;
+/*! padding: initial; */
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+  footer div.f1 p{
+    width: auto;
+  }
+}
+
+/* 768px----------------------------------------- */
+@media screen and (max-width:768px){
+  section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  /* ------------------타이틀   */
+  #title{
+    height: 60%;
+  }
+  #title h2{
+    transform: scale(1.5);
+    padding-bottom: 30px;
+    line-height: 1.2;
+  }
+  #title p{
+    transform: scale(1.5);
+    width: 60%;
+  }
+  #title a ion-icon{
+    bottom:  20% !important;
+  }
+/*  ----------------------works  */
+  section#works ul{
+    flex-direction: column;
+  }
+  section#works ul li p{
+    padding-bottom: 20px;
+  }
+/*  ---------------------property  */
+  section#property ul{
+    display: block;
+  }
+  section#property ul li{
+    width: 80%;
+  }
+  section#property ul li img{
+    width: 60%;
+    height: 250px;
+    display: block;
+    margin: 0 auto;
+  }
+  section#property ul li .prodiv{
+    text-align: center;
+  }
+  #property span.control {
+    display: none;
+  } 
+/*  ---------------------company  */
+  section#company{
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  section#company .block_center > div.left {
+    width: 74%;
+    top: 145px;
+    left: -64px;
+  }
+  section#says p:nth-of-type(1){
+    width: 95%;
+    line-height: 1.5;
+    font-size: 21px;
+  }
+/*  ---------------------contactus  */
+  section#contactus form, section#contactus ul{
+    background-color: transparent;
+    padding: 0;
+  }
+  section#contactus form fieldset span.inline-block{
+    width: 100%;
+  }
+  section#contactus form fieldset textarea{
+    height: 100px;
+  }
+  section#contactus form fieldset button{
+    width: auto;
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  section#contactus ul{
+    display: inherit;
+  }
+  section#contactus ul li{
+    width: 45%;
+  }
+  section#contactus ul li:nth-child(1){
+    float: left; 
+  }
+  section#contactus ul li:nth-child(2),#contactus ul li:nth-child(3){
+    float: right;
+  }
+  section#contactus ul li:nth-child(2) p {
+    line-height: 1.3;
+    padding: 0;
+    /*! padding-bottom: 15px; */
+  }
+/*  -------------------------footer  */
+  .h5{
+    line-height: 1.3;
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+  footer{
+    padding: 15px;
+  }
+  footer .fff{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+  }
+  footer div.f3 div{
+    padding-top: 15px;
+  }
+  footer div.f3 form fieldset{
+    width: 100%;
+  }
+  footer div.f3 form fieldset input{
+    width: 70%;
+    font-size: 12px;
+  }
+  footer div.f3 form fieldset button{
+    width: 30%;
+    padding: 0;
+    font-size: 12px;
+  }
+}

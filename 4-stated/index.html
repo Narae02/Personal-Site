@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=decice-width, intial-scale=1">
+    <title>stated</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;900&family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/control.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        if($(window).width()<769){
+          $('.single-item-rtl').slick({
+            dots: false,  //// 스크롤바 아래 점으로 페이지네이션 여부
+            infinite: true,
+            slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
+            slidesToScroll : 1,  //스크롤 한번에 움직일 컨텐츠 개수
+            arrows : true,   //옆으로 이동하는 화살표 표시 여부
+            autoplay: true,  // 자동 스크롤 사용 여부
+            autoplaySpeed: 2000,  // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
+            speed: 100,  // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
+            fade: true,
+            cssEase: 'linear',
+            draggable : true, 	//드래그 가능 여부 
+            pauseOnHover : true,		// 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
+          });
+        }
+        $(window).resize(function(){
+          if($(window).width()<769){
+            $('.single-item-rtl').slick({
+            dots: false,  
+            infinite: true,
+            slidesToShow : 1,		
+            slidesToScroll : 1,  
+            arrows : true,  
+            autoplay: true,  
+            autoplaySpeed: 2000,  
+            speed: 100,  
+            fade: true,
+            cssEase: 'linear',
+            draggable : true, 	
+            pauseOnHover : true,	
+            });
+          }   
+          //
+        });
+
+        // 타이틀 이미지갯수 표시
+        var n;
+        n=$(".titleFade .slick-track li").length;
+        $("#title .slick-dots").append("<span class='sum'></span>");
+        $("#title .slick-dots .sum").text("/"+n);
+
+      });
+  </script>
+  </head>
+  <body>
+    <!-- //////////////// 상단영역 /////////////// -->
+    <header id="home">
+      <div class="block_center">
+        <h1><a href="#">Stated.</a></h1>
+        <ul class="gnb">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#property">Properties</a></li>
+          <li><a href="#company">About</a></li>
+          <li><a href="#contactus">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- //////////////// 타이틀 ///////////////// -->
+    <div id="title" class="w1200">
+      <h2 class="h2">Buy and sell real estate <span>properties</span></h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam<br>assumenda ea quo cupiditate facere deleniti fuga officia.</p>
+      <a href="#works">
+        <ion-icon name="arrow-down-outline"></ion-icon>
+      </a>
+    </div>
+    <!-- //////////////// 컨텐츠 /////////////////// -->
+    <main>
+      <!-- how it works -->
+      <section id="works" class="w1200">
+        <h2 class="h2">How It Works</h2>
+        <ul class="single-item-rtl">
+          <li class="workslist workslist1">
+            <h3><ion-icon name="search"></ion-icon>Find Property.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur<br>adipisicing elit.</p>
+          </li>
+          <li class="workslist workslist2">
+            <h3><ion-icon name="card-outline"></ion-icon>Buy Property.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur<br>adipisicing elit.</p>
+          </li>
+          <li class="workslist workslist3">
+            <h3><ion-icon name="home-outline"></ion-icon>Make Investment.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur<br>adipisicing elit.</p>
+          </li>
+        </ul>
+      </section>
+      <!-- properties -->
+      <section id="property" class="w1200">
+        <h2 class="h2">Properties</h2>
+        <ul class="single-item-rtl">
+          <li>
+            <img src="img/property_1.jpg" alt="집 이미지1">
+            <div class="prodiv">
+              <strong class="block">$3,400,000</strong>
+              <span>6 beds</span>
+              <span>4 beths</span>
+              <span>4 250sqft</span>
+              <p>480 12th, Unit14, Sans Francisco.CA</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/property_2.jpg" alt="집 이미지2">
+            <div class="prodiv">
+              <strong class="block">$3,400,000</strong>
+              <span>6 beds</span>
+              <span>4 beths</span>
+              <span>4 250sqft</span>
+              <p>480 12th, Unit14, Sans Francisco.CA</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/property_3.jpg" alt="집 이미지3">
+            <div class="prodiv">
+              <strong class="block">$3,400,000</strong>
+              <span>6 beds</span>
+              <span>4 beths</span>
+              <span>4 250sqft</span>
+              <p>480 12th, Unit14, Sans Francisco.CA</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/property_4.jpg" alt="집 이미지4">
+            <div class="prodiv">
+              <strong class="block">$3,400,000</strong>
+              <span>6 beds</span>
+              <span>4 beths</span>
+              <span>4 250sqft</span>
+              <p>480 12th, Unit14, Sans Francisco.CA</p>
+            </div>
+          </li>
+        </ul>
+        <span class="control">
+          <button>Previous</button>
+          <button>Next</button>
+        </span>
+        <a href="#">View All Property Listing</a>
+      </section>
+      <!-- RealEstate Company -->
+      <section id="company" class="w1200">
+        <div class="block_center">
+          <div class="right">
+            <h2 class="h2">We Are The Best RealEstate Company</h2>
+            <p>Lorem ipsum dolor sit amet consectetur<span>adipisicing elit.</span></p>
+            <p>Est qui eos quasi ratione nostrum excepturi id recusandae<span>fugit omnis ullam pariatur itaque nisi voluptas impedit Quo<span>suscipit omnis iste velit maxime.</p>
+            <ul>
+              <li>Placeat maxime animi minus</li>
+              <li>Dolore qui placeat maxime</li>
+              <li>Consectetur adipisicing</li>
+              <li>Lorem ipsum dolor</li>
+              <li>Placeat molestias animi</li>
+            </ul>
+            <a href="#">learn more</a>
+          </div>
+          <div class="left">
+            <figure><img src="img/property_1.jpg" alt=""></figure>
+            <span><button>prev</button><button>next</button></span>
+          </div>
+        </div>
+      </section>
+      <!-- People Says... -->
+      <section id="says" class="w1200">
+        <h2 class="h2">People Says...</h2>
+        <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.”</p>
+        <p><img src="img/person_4.jpg" alt="사람이미지">Robert Spears</p>
+      </section>
+      <!-- Contact Us -->
+      <section id="contactus" class="w1200">
+        <div class="block_center">
+            <h2 class="h2">Contct Us</h2>
+            <form action="">
+              <fieldset>
+                <legend>Contact Form</legend>
+                <span class="inline-block">
+                  <label for="">First Name</label>
+                  <input type="text">
+                </span>
+                <span class="inline-block">
+                  <label for="">Last Name</label>
+                  <input type="text">
+                </span>
+                <label for="">Email</label>
+                <input type="email">
+                <label for="">Subject</label>
+                <input type="text">
+                <label for="">Message</label>
+                <textarea name="name" rows="8" cols="80" placeholder="Write your notes or questions here..."></textarea>
+                <button>send message</button>
+              </fieldset>
+            </form>
+            <ul>
+              <li>
+                <h3>Address</h3>
+                <p>203 Fake St. Mountain View, San Francisco, California,USA</p>
+              </li>
+              <li>
+                <h3>Phone</h3>
+                <p>+1 232 3235 324</p>
+              </li>
+              <li>
+                <h3>Email Address</h3>
+                <p>youremail@domain.com</p>
+              </li>
+            </ul>
+          </div>
+      </section>
+    </main>
+    <!-- ///////////////////// 하단영역 ///////////////////// -->
+    <footer>
+      <div class="block_center">
+        <div class="fff">
+          <div class="f1">
+            <h2 class="h5">About Stated</h2>
+            <p>Lorem ipsum dolor sit amet consectetur<br>adipisicing elit. Neque facere<br>laudantium magnam voluptatum autem.<br>Amet aliquid nesciunt veritatis aliquam.</p>
+          </div>
+          <div class="f2">
+            <h2 class="h5">Quick Links</h2>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="f3">
+          <h2 class="h5">Subscribe Newsletter</h2>
+          <form action="">
+            <fieldset><input type="email" placeholder="Enter Email"><button>send</button></fieldset>
+          </form>
+          <div>
+            <h2 class="h5">Follow Us</h2>
+            <ul>
+              <li><a href="#"><ion-icon name="logo-facebook"></ion-icon><span class="hide">페이스북</span></a></li>
+              <li><a href="#"><ion-icon name="logo-twitter"></ion-icon><span class="hide">트위터</span></a></li>
+              <li><a href="#"><ion-icon name="logo-instagram"></ion-icon><span class="hide">인스타그램</span></a></li>
+              <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon><span class="hide">링크에딘</span></a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+        <p class="copyright">Copyright ©2021 All rights reserved | This template is made with <ion-icon name="heart"></ion-icon>by <a href="#">Colorlib</a></p>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  </body>
+</html>

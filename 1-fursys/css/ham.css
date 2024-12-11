@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* 햄버거버튼 */
+.ham{
+  width: 20px;
+  height: 2px;
+  background-color: #5d5d5d;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  top: 50px;
+  display: none;
+  transition: all 1s;
+}
+.ham::before{
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #5d5d5d;
+  display: block;
+  position: relative;
+  top: -8px;
+  z-index: 2;
+}
+.ham::after{
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #5d5d5d;
+  display: block;
+  position: relative;
+  top: 6px;
+  z-index: 2;
+}

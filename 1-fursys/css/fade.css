@@ -1,0 +1,555 @@
+@charset "UTF-8";
+div#title {
+  background-image: url(../img/titlebg1.jpg);
+  color: #fff;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+div#title ul{
+  /* transition: all 1s; */
+  transform-origin: 0 0;
+  /* display: flex; */
+  /* width: 500%; */
+  position: relative;
+}
+div#title ul li{
+  padding: 200px 0 200px 200px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div#title ul li:not(:first-child){
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+}
+.zindex1{
+  z-index: 3;
+}
+.zindex2{
+  z-index: 4;
+}
+div#title ul li:nth-child(1){
+  background-image:url(https://images.unsplash.com/photo-1623138999341-0ddf8c77954a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);
+  position: relative;
+}
+div#title ul li:nth-child(2){
+  background-image:url(https://images.unsplash.com/photo-1623145140935-ba2d808d097e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1336&q=80);
+}
+div#title ul li:nth-child(3){
+  background-image:url(https://images.unsplash.com/photo-1623171820516-a7572c033831?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);
+}
+div#title ul li:nth-child(4){
+  background-image:url(https://images.unsplash.com/photo-1623096765281-9c2a43de3ec8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80);
+}
+div#title ul li:nth-child(5){
+  background-image:url(https://images.unsplash.com/photo-1623167862201-44aa8e8a2dbd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80);
+}
+div#title h2{
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+div#title h3{
+  color: #fff;
+  font-size: 40px;
+  margin: 30px 0 50px 0;
+  line-height: 1.3;
+}
+div#title a{
+  color: #fff;
+  border: 1px solid #fff;
+  line-height: 60px;
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  display: block;
+  box-sizing: border-box;
+  transition: background-color 0.5s;
+}
+div#title a:hover{
+  background-color: #000;
+  border: 1px solid transparent;
+}
+.hide {
+  display: none;
+}
+div#title span.dot{
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 40px;
+}
+div#title span.dot a{
+  display: inline-block; 
+  margin : 0 8px;
+  width: 10px;
+  height: 10px;
+  vertical-align: sub;
+  border: navajowhite;
+  background-color: #fff;
+}
+div#title span.dot a:after{
+  content: "";
+}
+.currentT{
+ background-color: red !important;
+}
+/* 컨텐츠 -----  */
+
+.srbg{
+  background-color: red;
+  color:white;
+}
+.hp{
+  line-height: 2 !important;
+  font-size: 14px;
+}
+.h3{
+  line-height: 3 !important;
+  font-weight: bold !important;
+  font-size: 18px;
+}
+main #issues{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 125px;
+}
+main #issues h2{
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+}
+main #issues h2+p{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+main #issues ul{
+  text-align: center;
+  overflow: hidden;
+}
+main #issues ul li{
+  display: inline-block;
+  width: 30%;
+  text-align: left;
+}
+main #issues ul li.left{
+  float: left;
+}
+main #issues ul li a:hover::before{
+  opacity: 0.3;
+}
+main #issues ul li a::before{
+  content:"";
+  width:100%;
+  height: 310px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: all 0.5s;
+  background-position: center;
+}
+main #issues ul li.left a::before{
+  background-image: url(https://www.fursys.com/fur_frt/images/main_renewal/0819/issues.jpg);
+
+}
+main #issues ul li.left+li a::before{
+  background-image: url(https://www.fursys.com/fur_frt/images/main_renewal/0404/issues_02.jpg);
+}
+main #issues ul li.right a::before{
+  background-image: url(https://www.fursys.com/fur_frt/images/main_renewal/0404/issues_03.jpg);
+}
+main #issues ul li a:hover::before{
+  background-size: 120% !important;
+}
+main #issues ul li.right{
+  float: right;
+}
+main #issues ul li a{
+ display: block;
+ position: relative;
+}
+main #issues ul li a h3{
+  font-weight: bold;
+  line-height: 3;
+}
+main #issues ul li a h3+p{
+  font-size: 14px;
+  line-height: 1.6;
+}
+main #issues ul li a p.go{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 310px;
+  line-height: 330px;
+  text-align: center;
+  color:#fff;
+  background-color: rgba(0,0,0,0.6);
+  /*! display: none; */
+  transition: all 0.5s;
+  opacity: 0;
+}
+main #issues ul li a:hover p.go{
+  opacity: 1;
+}
+
+
+/* offce */
+/* div#office{
+  padding-top: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 60px;
+  box-sizing: border-box;
+  padding-bottom: 70px;
+  background-image: url(https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+  background-color: #7b7a7a;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-position: center;
+  margin-top: 120px;
+}
+div#office h2{
+  font-size: 33px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+div#office p{
+  margin: 20px 0 33px;
+}
+div#office a{
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+} */
+/*  쇼룸------------------------- */
+/* #showroom{
+  padding-top: 120px;
+  text-align: center;
+} */
+/* #showroom h2{
+  text-align: center;
+  font-size: 33px;
+  margin-bottom: 22px;
+  font-weight: bold;
+}
+#showroom h2+p{
+  text-align: center;
+} */
+/* 쇼룸리스트 */
+/* #showroom ul.list{
+  text-align: center;
+  margin-top: 25px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+#showroom ul.list li{
+  display: inline-block;
+}
+#showroom ul.list li+li{
+ border-left: 1px solid;
+}
+#showroom ul.list li a{
+  padding: 6px 20px;
+  display: block;
+} */
+/* 쇼룸디테일 */
+/* #showroom ul.detail{
+  padding-top: 0px;
+  max-width: 1920px;
+  height: 33.85416vw;
+  position: relative;
+} */
+/* #showroom ul.detail li{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+} */
+/* #showroom ul.detail li img{
+ width: 100%;
+} */
+/* #showroom a.go{
+  display: inline-block;
+  padding: 6px 20px;
+  border: 1px solid;
+  font-size: 13px;
+} */
+/* #showroom a.go::after{
+ content: ">";
+ margin-left: 8px;
+ transform: scaleY(1.7) translateY(-1.5px);
+ display: inline-block;
+}
+#showroom button.counsel{
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1;
+  border-radius: 20px;
+} */
+/* 뉴스---------------------------------- */
+#news{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px;
+  position: relative;
+}
+#news h2{
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+}
+#news p{
+  text-align: center;
+  line-height: 2;
+}
+#news ul{
+  margin-top: 20px;
+  background-color: #ebe4e4;
+  padding: 15px;
+}
+#news ul li{
+  line-height: 2;
+}
+#news ul li h3{
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+}
+#news ul li a{
+  width: 68%;
+  display: inline-block;
+  vertical-align: top;
+}
+#news ul li time{
+  vertical-align: top;
+}
+#news a.more{
+  position: absolute;
+  right: 0;
+  top: 77px;
+  border: 1px solid;
+  padding: 5px 10px;
+  line-height: 16px;
+  display: block;
+  height: 16px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+/* casestudy-------------------- */
+#casestudy{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+#casestudy h2{
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-image: url(../img/arrow.png);
+  background-size: 300%;
+  /*! height: 300px; */
+}
+#casestudy h2+p{
+  text-align: center;
+  margin-bottom: 50px;
+}
+#casestudy ul{
+  text-align: center;
+}
+#casestudy ul li{
+  display: inline-block;
+  width: 30%;
+}
+#casestudy ul li:first-child{
+  float: left;
+}
+#casestudy ul li:last-child{
+  float: right;
+}
+#casestudy ul li a{
+  text-align: left;
+  position: relative;
+  display: block;
+}
+#casestudy ul li a:hover p.go{
+  display: block;
+}
+#casestudy ul li a::before{
+  content:"";
+  width: 100%;
+  height: 300px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
+}
+#casestudy ul li:nth-child(1) a::before{
+  background-image: url(https://www.fursys.com/fur_frt/images/main_renewal/210113/case_study_01.jpg);
+}
+#casestudy ul li:nth-child(2) a::before{
+  background-image: url(https://www.fursys.com/fur_frt/images/main_renewal/0404/case_study_02.jpg);
+}
+#casestudy ul li:nth-child(3) a::before{
+  background-image: url(https://www.fursys.com/fur_frt/images/main_renewal/210113/case_study_03.jpg);
+}
+#casestudy ul li a h3{
+}
+#casestudy ul li a h3+p{
+
+}
+#casestudy ul li a p.go{
+  color:#fff;
+  height: 300px;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+}
+#casestudy ul li a p.go::before{
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -6px;
+  line-height: 216px;
+}
+#casestudy ul li:nth-child(1) a p.go::before{
+  content: "3M";
+}
+#casestudy ul li:nth-child(2) a p.go::before{
+  content: "kakaogames";
+  letter-spacing: 0px;
+}
+#casestudy ul li:nth-child(3) a p.go::before{
+  content: "unionwork";
+  letter-spacing: 0px;
+}
+#casestudy a.more{
+}
+/* 사무환경 */
+#officelife{
+  padding: 100px 0;
+  background-image: url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80);
+  background-size: cover;
+  margin-top: 110px;
+  height: 430px;
+  position: relative;
+  box-sizing: border-box;
+}
+#officelife div{
+  width: 550px;
+  margin: 0 auto;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+  background-color: rgba(255,0,0,0.8);
+  position: relative;
+  overflow: hidden;
+}
+#officelife div h2{
+  margin-bottom: 20px;
+  font-size: 24px;
+  color:#fff;
+  font-weight: bold;
+  position: relative;
+}
+#officelife div a{
+ color:#fff;
+ font-weight: bold;
+}
+#officelife div a::after{
+  content: ">";
+  font-size: 14px;
+  transform: scaleY(2) translateY(-1px);
+  display: inline-block;
+  margin-left: 10px;
+}
+/* 스크롤탑 */
+a.top{
+  display: block;
+  width: 165px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+a.top::before{
+  content:">";
+  transform: rotate(-90deg);
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  margin-right: 11px;
+  vertical-align: -2px;
+  width: 23px;
+  height: 23px;
+ }
+/* 퀵메뉴 */
+#quickmenu{
+  width: 147px;
+  position: fixed;
+  right: 0;
+  bottom: 170px;
+  height: 236px;
+  z-index: 2;
+}
+#quickmenu h2{
+  float: right;
+  background-color: #151414;
+  position: relative;
+  width: 36px;
+  height: 230px;
+}
+#quickmenu h2 a{
+  display: block;
+  transform-origin: 100% 100%;
+  transform: rotate(-90deg);
+  position: absolute;
+  color: #fff;
+  right: 11px;
+  width: 206px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-align: center;
+}
+#quickmenu:hover ul{
+  display: block;
+}
+#quickmenu ul{
+  float: right;
+  background-color: #151414;
+  padding: 19px 0;
+  border-radius: 30px 0 0 30px;
+  display: none;
+}
+#quickmenu ul li{
+}
+#quickmenu ul li a{
+  color: #fff;
+  line-height: 2;
+  font-size: 12px;
+  display: block;
+  padding: 0 20px;
+}
+#quickmenu ul li a:hover{
+  color: red;
+}
+

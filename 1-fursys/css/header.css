@@ -1,0 +1,192 @@
+h1,h2,h3,h4,h5,h6,li,a,span{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+p{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+}
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  height: 36px;
+}
+
+header h1 {
+  float: left;
+  width: 13%;
+}
+header h1 a {
+  width: 85px;
+  height: 38px;
+  display: block;
+  background-image: url(https://www.fursys.com/fur_frt/images/text/text_logo.png);
+  text-indent: -9999px;
+}
+header>ul {
+  float: left;
+}
+header>h1+ul {
+  width: 70%;
+}
+ul.gnb {
+ width: 69%;
+}
+ul.gnb>li{
+  position: relative;
+  padding-bottom: 20px;
+}
+ul.gnb li h2 a:hover{
+color:red;
+}
+ul.gnb li h2 a {
+  padding: 4px 20px;
+  /*! font-weight: bold; */
+  position: relative;
+  display: block;
+}
+ul.gnb li h2 a::before{
+  content: "";
+  border-top: 1px solid red;
+  width: 90px;
+  display: block;
+  position: absolute;
+  left: 18px;
+  top: 0px;
+  display: none;
+}
+ul.gnb li:nth-child(1) a::before,ul.gnb li:nth-child(4) a::before,ul.gnb li:nth-child(6) a::before{
+  width: 50px;
+  left: 19px;
+}
+ul.gnb li:nth-child(2) a::before,ul.gnb li:nth-child(5) a::before{
+  width: 40px;
+  left: 18px;
+}
+ul.gnb li:nth-child(3) a::before{
+  width: 90px;
+  left: 18px;
+}
+ul.gnb li:nth-child(7) a::before{
+  width: 60px;
+  left: 19px;
+}
+ul.gnb li h2 a:hover::before{
+  display: block;
+}
+/* 서브메뉴 */
+ul.gnb .submenu{
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px 12px;
+  width: 130px;
+  top: 40px;
+  display: none;
+  font-size: 13px;
+  letter-spacing: -1px;
+  z-index: 10;
+}
+ul.gnb li:first-child .submenu{
+  width: 363px;
+}
+ul.gnb .submenu::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -9px;
+  left: 32px;
+  background-color: #fff;
+}
+ul.gnb li:hover .submenu{
+  display: block;
+}
+ul.gnb .submenu .submenuin{
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+ul.gnb .submenu h3{
+  font-weight: bold;
+  border-top: 2px solid;
+  border-bottom: 1px dotted;
+  padding: 15px 0 20px;
+  margin-bottom: 15px;
+}
+ul.gnb .submenu li a:hover{
+  background-color: #ccc
+}
+ul.gnb .submenu li:first-child{
+  border-top: 2px solid;
+  padding-top: 15px;
+}
+ul.gnb .submenu li:last-child{
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 10px;
+}
+ul.gnb li:first-child .submenu li:first-child{
+ border:none;
+ padding: 0;
+}
+ul.gnb li:last-child .submenu li:last-child{
+ border:none;
+ padding: 0;
+}
+ul.gnb .submenu li a{
+  line-height: 1.6;
+  display: block;
+}
+header>h1+ul>li {
+  float: left;
+  font-size: 13px;
+}
+header>h1+ul+ul {
+  width: 15%;
+  position: relative;
+  top: 13px;
+  color: #adacac;
+}
+header >h1+ul+ul>li {
+  float: left;
+  font-size: 12px;
+  font-weight: 300;
+}
+header >h1+ul+ul>li:first-child {
+  width: 39%;
+}
+header >h1+ul+ul>li:nth-child(2) {
+  width: 61%;
+  text-align: right;
+  border-left: 1px solid;
+  box-sizing: border-box;
+}
+header>h1+ul+ul>li:last-child {
+  position: absolute;
+  right: 0;
+  top: -36px;
+  background-color: red;
+  width: 90%;
+  text-align: right;
+}
+header>h1+ul+ul>li:last-child a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: 3px 0;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+header>h1+ul+ul>li:last-child a i {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  vertical-align: text-bottom;
+  color: white;
+}

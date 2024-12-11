@@ -1,0 +1,12 @@
+@charset "utf-8";
+#title{
+  height: 1000px;
+  background-image: url(https://images.unsplash.com/photo-1559251606-c623743a6d76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fHBpbmt8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+

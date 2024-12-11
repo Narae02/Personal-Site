@@ -1,0 +1,178 @@
+@charset "utf-8";
+#join{
+
+  width: 1200px;
+}
+#join div.block_center{
+
+}
+#join div.block_center h2{
+
+  padding: 40px 0;
+  text-align: center;
+}
+#join div.block_center p{
+
+  padding-bottom: 10px;
+}
+#join div.block_center p strong{
+  color: blue;
+}
+#join div.block_center form{
+
+}
+#join div.block_center form fieldset.terms{
+
+}
+#join div.block_center form fieldset.terms div.join1{
+
+  border: 1px solid;
+  background-color: #ccc;
+  padding: 40px;
+}
+#join div.block_center form fieldset.terms div.join1 input{
+
+}
+#join div.block_center form fieldset.terms div.join1 label{
+
+}
+#join div.block_center form fieldset.terms div.join1 label strong{
+
+}
+#join div.block_center form fieldset.terms div.join2{
+
+  border: 1px solid;
+  background-color: #ccc;
+  padding: 40px;
+  display: inline-flex;
+}
+#join div.block_center form fieldset.terms div.join2 label{
+
+  background-color: #fff;
+}
+#join div.block_center form fieldset.terms div.join2 strong{
+
+}
+#join div.block_center form fieldset.terms div textarea{
+  width: 700px;
+  white-space: pre-line;
+  padding: 19px;
+}
+
+/* 필수 입력사항 */
+#join div.block_center form p{
+
+}
+#join div.block_center form .necessary{
+
+}
+#join div.block_center form .necessary legend{
+
+}
+#join div.block_center form .necessary span.id{
+
+}
+#join div.block_center form .necessary span.id label{
+
+}
+
+#join div.block_center form .necessary span.id input{
+
+}
+#join div.block_center form .necessary span.id input button{
+
+}
+
+
+#join div.block_center form .necessary span.pw{
+
+}
+#join div.block_center form .necessary span.pw label{
+
+}
+#join div.block_center form .necessary span.pw input{
+
+}
+
+
+#join div.block_center form .necessary span.pw1{
+
+}
+#join div.block_center form .necessary span.pw1 label{
+
+}
+#join div.block_center form .necessary span.pw1 input{
+
+}
+
+
+
+#join div.block_center form .necessary span.name{
+
+}
+#join div.block_center form .necessary span.name label{
+
+}
+#join div.block_center form .necessary span.name input{
+
+}
+
+
+
+#join div.block_center form .necessary span.birht{
+
+}
+#join div.block_center form .necessary span.birht label{
+
+}
+#join div.block_center form .necessary span.birht input{
+
+}
+
+
+
+#join div.block_center form .necessary span.hp{
+
+}
+#join div.block_center form .necessary span.hp label{
+
+}
+#join div.block_center form .necessary span.hp input{
+
+}
+
+
+#join div.block_center form .necessary span.pw_question{
+
+}
+#join div.block_center form .necessary span.pw_question label{
+
+}
+#join div.block_center form .necessary span.pw_question select{
+
+}
+#join div.block_center form .necessary span.pw_question select option{
+
+}
+
+
+#join div.block_center form .necessary span.Prevention{
+
+}
+#join div.block_center form .necessary span.Prevention label{
+
+}
+
+#join div.block_center form .necessary span.Prevention input{
+
+}
+#join div.block_center form .necessary span.Prevention input button{
+
+}
+
+#join div.block_center form p{
+
+}
+#join div.block_center form p strong{
+
+}

@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 공통클래스 스타일 */
+.hide{
+    display: none;
+}
+.mb80{
+    /* margin-top: 100px; */
+}
+.block_center{
+    margin: 0 auto;
+}
+.block{
+    display: block;
+}
+
+
