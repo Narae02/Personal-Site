@@ -1,0 +1,29 @@
+@charset "UTF-8";
+body>div{
+width: 1000px;
+margin: 0 auto;
+text-align: right;
+}
+h2{
+width: 15%;
+position: absolute;
+left: 20px;
+top: 30px;
+}
+.h900{
+  height: 900px;
+  width: 90%;
+  display: inline-block;
+}
+.a{
+  background-color: red;
+}
+.a{
+  background-color: green;
+}
+.a{
+  background-color: blue;
+}
+.a{
+  background-color: gray;
+}

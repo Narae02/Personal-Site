@@ -1,0 +1,129 @@
+@charset "utf-8";
+body .tbodybg{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index:-1;
+  background-attachment:fixed;
+  transition:all 1.5s ease-out;
+}
+body .tbodybg.bgbig{
+  background-size: 110%;
+  background-position: center;
+}
+#title{
+  /*! background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60); */
+  height: 100%;
+  /*! background-size: cover; */
+  /*! background-repeat: no-repeat; */
+  /*! background-position: center; */
+  /*! background-attachment: fixed; */
+  /*! color:#fff; */
+  min-height: 570px;
+}
+#title .wrap{
+  height: 100%;
+  /*! display: flex; */
+}
+#title ul{
+  max-width: 1200px;
+  margin: 0 auto;
+  /*! border: 1px solid #fff; */
+  box-sizing: border-box;
+}
+#title ul.fade{
+  height: 80%;
+}
+#title ul.fade li{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#title ul.fade li h2{
+  font-size: 73px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 80px;
+  margin-top: 80px;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+}
+#title ul.fade li h3{
+  font-size: 23px;
+  line-height: 1.4;
+  margin-bottom: 70px;
+  color: #fff;
+}
+#title ul.fade li a{
+ color: #fff; 
+ margin-bottom: 60px;
+ font-size: 17px;
+}
+#title ul.fadelist{
+  height: 20%;
+  display: flex;
+}
+#title ul.fadelist li{
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  margin-right: 30px;
+  background-color: #ccc;
+  position: relative;
+  margin-left: 14px;
+}
+#title ul.fadelist li span{
+  position: absolute;
+  transition: all 0.1s;
+  background-color: #000;
+}
+#title ul.fadelist li span:nth-child(1){
+ width: 0%;
+ height:1px; 
+ left: 0;
+ top:0; 
+}
+#title ul.fadelist li span:nth-child(2){
+ width: 1px;
+ height:0;
+ right: 0;
+ top:0;
+ transition-delay: 0.1s;
+}
+#title ul.fadelist li span:nth-child(3){
+ width: 0%;
+ height:1px; 
+ right: 0;
+ bottom: 0; 
+ transition-delay: 0.2s; 
+}
+#title ul.fadelist li span:nth-child(4){
+ width: 1px;
+ height:0; 
+ left:0;
+ bottom:0; 
+ transition-delay: 0.3s; 
+}
+#title ul.fadelist li.outAni span:nth-child(1){
+  width: 100%;
+}
+#title ul.fadelist li.outAni span:nth-child(2){
+  height: 100%;
+}
+#title ul.fadelist li.outAni span:nth-child(3){
+  width: 100%;
+}
+#title ul.fadelist li.outAni span:nth-child(4){
+  height: 100%;
+}
+.cu_list{
+  background-color: #fff !important;
+}
+

@@ -1,0 +1,166 @@
+@charset "UTF-8";
+aside{
+  position: fixed;
+  right: -300px;
+  top: calc(50% - 150px);
+  width: 300px;
+  min-height: 245px;
+  background-color: #fff;
+  padding: 25px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  /* animation-name: asideMove; */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* animation-direction: reverse; */
+  animation-timing-function: ease-out;
+}
+.asideMove{
+  animation-name: asideMove;
+}
+@keyframes asideMove{
+  0%{
+    right: -300px;
+  }
+  100%{
+    right: 40px;
+  }
+}
+.asideMoveBack{
+  animation-name: asideMoveBack;
+}
+@keyframes asideMoveBack{
+  0%{
+    right:40px;
+  }
+  100%{
+    right: -300px;
+  }
+}
+aside h2{
+  width:30%;
+  padding: 10px;
+  text-align:center;
+  position: absolute;
+  left: 0;
+  top:50%; 
+  transform:rotate(-90deg); 
+  transform-origin: 0% 100%;
+  background-color: red;
+  color:#fff;
+  }
+aside h2+p{
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+aside ul{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+aside ul li{
+  background-color: #ffe30094;
+  padding: 2px;
+  border-radius: 5px;
+}
+aside ul li:not(:hover) a span{
+/*   opacity: 0.1; */
+}
+aside ul li a span{
+/*   opacity: 1; */
+}
+aside ul li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #956f14;
+}
+aside ul li a span{
+  transition:all 0.2s;
+}
+aside ul li a span:nth-child(1){
+  transform: scale(1.3);
+  padding: 5px;
+}
+aside ul li a span:nth-child(2){
+  opacity: 0;
+  position: relative;
+  bottom: -8px; 
+  font-size: 11px;
+  width: 50px;
+  display: block;
+  padding-bottom: 3px;
+}
+aside ul li a:hover span:nth-child(2){
+  opacity: 1;
+  bottom: 0px; 
+}
+aside ul+p{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  font-size: 11px;
+}
+/* aside form{
+
+}
+aside form textarea{
+  
+} */
+aside>button{
+  position: absolute;
+  right: 15px;
+  top: -18px;
+  /*! padding: 6px; */
+  font-size: 12px;
+  width: 34px;
+  height: 34px;
+  text-indent: -9999px;
+  border-radius: 50px;
+  background-color: red;
+  color: #fff;
+  border: navajowhite;
+ }
+ aside>button::before{
+   content: "";
+   width: 22px;
+   height: 5px;
+   background-color: #fff;
+   position: absolute;
+   left: calc(50% - 11px);
+   top: calc(50% - 2px);
+   display: block;
+   transform: rotate(45deg);
+   border-radius: 50px;
+ }
+ aside>button::after{
+   content: "";
+   width: 22px;
+   height: 5px;
+   background-color: #fff;
+   position: absolute;
+   left: calc(50% - 11px);
+   top: calc(50% - 2px);
+   display: block;
+   transform: rotate(-45deg);
+   border-radius: 50px;
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

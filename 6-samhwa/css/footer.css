@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* 하단영역 */
+
+footer{
+  background-color: #fafafa;
+  padding: 80px;
+}
+footer div.fnav{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer div.fnav ul.sns{
+  display: flex;
+  gap: 10px;
+}
+footer div.fnav ul.sns li{
+  display: inline-block;
+/*   vertical-align: top; */
+}
+footer div.fnav ul.sns li a{
+
+}
+footer div.fnav ul.sns li a i{
+  width: 40px;
+  height: 40px;
+  display: block;
+  color: black;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  font-style: normal;
+  font-size: 25px;
+}
+footer div.fnav ul.sns li:nth-child(1) a i{
+ 
+}
+footer div.fnav ul.sns li:nth-child(2) a i{
+  
+}
+footer div.fnav ul.sns li:nth-child(3) a i{
+  font-size: 17px;
+  font-weight: bold;
+}
+footer div.fnav p{
+
+  text-align: center;
+  line-height: 1.4;
+}
+footer div.fnav p strong{
+  font-size: 28px;
+}
+footer div.fnav .select{
+  position: relative;
+  width: 200px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+/*   background-color: yellow; */
+}
+footer div.fnav .select a{
+/*! width: 100%; */
+/*   display: inline-block; */
+/*   padding-right: 100px; */
+/*! box-sizing: border-box; */
+}
+footer div.fnav .select a::after{
+  content: ">";
+  width: 10px;
+/*   display: inline-flex; */
+  transform: rotate(-90deg) scaleY(1.5);
+  position: absolute;
+  top: 10px;
+  right: 18px;
+}
+footer div.fnav .select ul{
+  position: absolute;
+  font-size: 13px;
+  width: 90%;
+  bottom: 21px;
+  border: 1px solid;
+  padding: 10px 0;
+  background-color: #fff;
+}
+footer div.fnav .select ul li{
+
+}
+footer div.fnav .select ul li a{
+  line-height: 2;
+  display: block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+footer div.fnav .select ul li a:hover{
+ background-color: yellow;
+}
+footer address{
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 13px;
+}
+footer .copyright{
+
+  font-size: 12px;
+}

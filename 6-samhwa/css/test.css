@@ -1,0 +1,49 @@
+@charset "UTF-8";
+body>div{
+width: 1000px;
+margin: 0 auto;
+text-align: right;
+position: relative;
+}
+h2{
+width: 200px;
+position: absolute;
+/*! left: 20px; */
+top: 100px;
+font-size: 30px;
+text-align: center;
+color: #fff;
+padding: 15px 0;
+text-transform: uppercase;
+}
+.h900{
+  height: 1400px;
+  width: 80%;
+  display: inline-block;
+  border: 2px solid;
+  box-sizing: border-box;
+}
+.a{
+  background-color: red;
+}
+#about h2{
+  background-color: red;
+}
+.b{
+  background-color: green;
+}
+#skill h2{
+  background-color: green;
+}
+.c{
+  background-color: blue;
+}
+#portfolio h2{
+  background-color: blue;
+}
+.d{
+  background-color: gray;
+}
+#contact h2{
+  background-color: gray;
+}
