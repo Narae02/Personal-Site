@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* 타이틀 영역 */
+#title{
+  height: 100%;
+  background-color: #eee;
+  background-image: url(../img/polygon.svg); 
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-attachment: fixed;
+  /*  배경 고정  */
+} 
+#title .w1000{
+  padding-right: 100px;
+  height: calc(100% - 120px);
+  padding-top: 120px;
+}
+#title ul.titleFade{
+  height: 100%;
+}
+/* #title .w1000 ul.titleFade button{
+
+}
+#title .w1000 ul.titleFade button.slick-prev{
+
+} */
+#title ul.titleFade .slick-list,
+#title ul.titleFade .slick-list .slick-track{
+  height: 100%;
+}
+/* #title .w1000 ul.titleFade button.slick-next{
+  
+} */
+#title ul.titleFade li.titlelist{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+  background-size:cover;
+  background-position: center;
+}
+#title ul.titleFade li.title1{
+ background-image: url(../img/main_visual_01.jpg);
+}
+#title ul.titleFade li.title2{
+ background-image: url(../img/main_visual_02.jpg);
+}
+#title ul li h3{
+   font-size: 33px;
+  transition-duration: 3s;
+  font-family: 'AritaSans';
+  font-style: normal;
+  font-weight: 300;
+  -moz-text-size-adjust: none;
+  color: #737373;
+}
+#title ul.titleFade li.titlelist p{
+  margin: 10px 0 40px;
+  color: #999;
+}
+/* 타이틀 이미지갯수 표시 */
+#title .slick-dots {
+  width: auto;
+  right: 30px;
+  bottom: auto;
+  top: 45%;
+}
+#title .slick-dots li{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#title .slick-dots .slick-active button{
+  font-size: 30px;
+  color: #666;
+  display: block;
+  font-weight: 300;
+}
+#title .slick-dots button::before{
+  display: none;
+}
+#title .slick-dots span{
+ position: absolute;
+  left: 50%;
+  top:calc(50% auto); 
+  display: block;
+  padding-left: 30px; 
+  font-size: 30px;
+}
+/* 페센트애니-하단라인 */
+#title .w1000 .slick-slide.slick-active::after{
+ content: "";
+ width: 100%;
+ height: 2px;
+ background-color: #007a88;
+ position: absolute;
+ bottom:0;
+ left:0;
+ animation-name:percentAni;
+ animation-duration: 4s;
+ animation-direction: reverse;
+ animation-fill-mode: forwards; 
+ animation-iteration-count: infinite;
+
+}
+@keyframes percentAni{
+  0%{
+    width:100%;
+  }
+  20%{
+   width:100%; 
+  }
+  100%{
+    width: 0%;
+  }
+}
+#title .w1000 .slick-slide.slick-active:hover::after{
+  animation-play-state: paused ;
+}
+

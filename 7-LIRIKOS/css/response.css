@@ -1,0 +1,168 @@
+@charset "UTF-8";
+@media screen and (max-width:1200px){
+  /* bestsellers */
+  #bestsellers .bestlist ul{
+    width: 47%;
+  }
+  #bestsellers .bestlist ul li:nth-child(3n+2) {
+    margin-top:0px;
+  }
+  /* experience */
+  #experience > div{
+    display: block;
+  }
+  #experience div h2{
+    width: auto;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    top: -50px;
+  }
+  #experience div h2 span{
+    display: inline;
+    margin-left: 10px;
+  }
+  #experience div ul{
+    width: 100%;
+  }
+  #experience div ul li h3 span{
+    display: inline;
+  }
+/*  prev,next  */
+  #experience .slick-prev, #experience  .slick-next{
+  top: auto;
+  bottom: 58px;
+  }
+  #experience .slick-prev{
+    left:  60%;
+  } 
+  #experience  .slick-next{
+    right: 15%;
+  }
+  #experience .slick-dots{
+    /*! text-align: center; */
+    /*! position: relative; */
+    bottom: 50px;
+    top: auto;
+    right: 22.5%;
+    padding-bottom: 0;
+  }
+/*  하단  */
+  footer div ul.left{
+    width: 70%;
+  }
+  footer div ul.right{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width:768px){
+/*  header  */
+  header div.gnb .left {
+    padding-left: 30px;
+}
+  header div.gnb .right {
+   padding-left: 30px;
+    padding-top: 150px;
+}
+/*  title  */
+  #title .w1000{
+    padding-right: 0;
+  }
+  #title .w1000 ul.titleFade li.titlelist{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #title .slick-prev, #title .slick-next{
+    right: 40px;
+    left: auto;
+    z-index: 3;
+  }
+  #title .slick-dots{
+    right: 70px;
+  }
+/*  bestsellers  */
+  #bestsellers div h2{
+  text-align: center;
+  }
+  #bestsellers div ul li{
+  width: 100% !important;
+  }
+  #bestsellers .bestlist ul li {
+    margin-bottom: 20px;
+}
+/*  brandstory  */
+  #brandstory{
+    padding-left: 0;  
+  }
+  #brandstory div{
+    padding-left: 20px;
+  }
+  #brandstory div h2{
+    margin-bottom: 20px;
+    font-size: 65px;
+  }
+/*  designstory  */
+  #designstory{
+    display: block;
+    background-size: 100%;
+  }
+  #designstory .wave {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 85px;
+    left: calc(50% - 50px);
+    border-radius: 50%;
+    overflow: hidden;
+}
+/*  experience  */
+  #experience div ul{
+    padding-bottom: 40px;
+  }
+  #experience div ul li{
+    display: block;
+  }
+  #experience div ul li img{
+    margin: 0 auto;
+  }
+  #experience a{
+    margin-left: 200px;
+  }
+  #experience .slick-dots{
+    bottom: 0;
+    right: auto;
+    left: calc(50% - 23px);
+  }
+  #experience .slick-prev, #experience .slick-next{
+    bottom: 15px;
+  }
+  #experience .slick-prev{
+    left: 25%;
+  }
+  #experience .slick-next{
+    left: calc(100% - 25% - (53px / 2));
+  }
+  #experience div ul li .right{
+    padding-bottom: 60px;
+  }
+  #experience div ul li a{
+    bottom: 40px;  
+  }
+  
+/*  하단   */
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+

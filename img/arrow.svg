@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+  <g>
+    <line x1="30" y1="8" x2="100" y2="8" stroke-width="2" stroke="black" />
+    <line x1="90" y1="0" x2="100" y2="8" stroke-width="2" stroke="black" />
+    <line x1="90" y1="16" x2="100" y2="8" stroke-width="2" stroke="black" />
+  </g>
+</svg>

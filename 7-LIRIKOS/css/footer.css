@@ -1,0 +1,70 @@
+@charset "utf-8";
+footer{
+  padding: 100px 5% 200px;
+  background-color: #5a5a5a;
+  color: #b8b8b8;
+/*   background-image: url(../img/footer.svg); */
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+footer div{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer div ul.list{
+  width: 50%;
+  display: flex;
+}
+footer div ul.list li{
+  
+}
+footer div ul.list li a{
+  color: #b8b8b8;
+  padding: 4px 10px;
+  position: relative;
+}
+footer div ul.list li:not(:first-child) a{
+  padding-left: 16px;
+}
+footer div ul.list li:not(:first-child) a::before{
+  content: "/";
+  position: absolute;
+  left: 0;
+  color: #b8b8b8;
+}
+footer div ul.sns{
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+footer div ul.sns::after{
+  content: ""; 
+ display: block;
+ width: 100%;
+ position: absolute;
+ bottom: 46%;
+ border-bottom: 1px solid #b8b8b8;
+ left: 0;
+}
+footer div ul.sns li{
+  
+}
+footer div ul.sns li a{
+  color: #fff;
+  border: 1px solid #fff;
+  text-indent: -9999px;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+footer div p{
+  
+}
+footer div select{
+/*   color: #fff; */
+}

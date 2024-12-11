@@ -1,0 +1,73 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Arita-dotum-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+h2,.h2,h3,p{
+   font-family:'AritaSans';
+   font-style: normal;
+   font-weight: 300;
+}
+.hide{
+  display: none !important;
+}
+.block_center{
+  margin: 0 auto;
+}
+.h2{
+  font-size: 38px;
+  letter-spacing: 2.5;
+  
+}
+/* .block_center{
+  margin: 0 auto;
+}
+.h1{
+  font-size: 34px;
+}
+.h2{
+  font-size: 28px;
+}
+.h3{
+  font-size: 22px;
+}
+.h4{
+  font-size: 19px;
+}
+.p{
+  font-size: 15px;
+} */
+.block{
+  display: block;
+}
+/* .w1200{
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+/* discover more */
+a.dmore{
+  position: relative;
+}
+a.dmore span.arrow{
+  position: absolute;
+  top:calc(50% - 8px);
+  left: 140px;
+  z-index: 1;
+}
+a.dmore::after{
+ content: "";
+ width: 40px;
+ height: 40px;
+ display: block;
+ background-color: #007a88;
+ position: absolute;
+ top:calc(50% - 20px);
+ left: 220px;
+  border-radius: 50%;
+ color: #999;
+ text-align: center;
+ line-height: 35px;
+ font-size: 26px;
+}

@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/*
+ * Font         : AritaSans, ap-font
+ * Subset Maker : Studio-jt (김민서)
+ * Version      : 1.0.0
+ */
+
+
+
+/* ************************************** *
+ * AritaSans
+ * ************************************** */
+@font-face {
+    font-family:'AritaSans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/aritafont/AritaSans-Thin.eot');
+    src: local("?"),
+         url('/aritafont/AritaSans-Thin.woff') format('woff'),
+         url('/aritafont/AritaSans-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family:'AritaSans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/aritafont/AritaSans-Light.eot');
+    src: local("?"),
+         url('/aritafont/AritaSans-Light.woff') format('woff'),
+         url('/aritafont/AritaSans-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family:'AritaSans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/aritafont/AritaSans-Medium.eot');
+    src: local("?"),
+         url('/aritafont/AritaSans-Medium.woff') format('woff'),
+         url('/aritafont/AritaSans-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family:'AritaSans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/aritafont/AritaSans-SemiBold.eot');
+    src: local("?"),
+         url('/aritafont/AritaSans-SemiBold.woff') format('woff'),
+         url('/aritafont/AritaSans-SemiBold.otf') format('opentype');
+}
+
+
+
+/* ************************************** *
+ * AP-FONT
+ * ************************************** */
+@font-face {
+    font-family:'ap-font';
+    font-style: normal;
+    font-weight: normal;
+    src: url(/aritafont/ap-font.eot);
+    src: local("?"),
+         url(/aritafont/ap-font.woff) format('woff');
+}

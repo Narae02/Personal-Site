@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIRIKOS_코딩작업</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/aritafont.css">
+  <link rel="stylesheet" href="css/header.css">
+  <!-- <link rel="stylesheet" href="css/ham.css"> -->
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/gooey.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/response.css">
+  <script  src="js/jquery-3.6.0.min.js"></script>
+  <!-- slick -->
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.titleFade').slick({
+        dots: true,
+        infinite: true,
+        autoplay:true,
+        autoplaySpeed: 4000,
+        speed: 1000,
+        fade: true,
+        cssEase: 'linear'
+      });
+
+      // 타이틀 이미지갯수 표시
+      var n;
+      n=$(".titleFade .slick-track li").length;
+      $("#title .slick-dots").append("<span class='sum'></span>");
+      $("#title .slick-dots .sum").text("/"+n);
+      // 퍼센트 바애니
+      $("#title .w1000").addClass("percentAni");
+
+      $('.infade').slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+      });
+
+      // bestsellers
+      var imgsrc;
+      $("#bestsellers div ul li a").hover(
+        function(){
+        // 오버해서 보여질 이미지를 추가
+          imgsrc=$(this).children().attr("src"); //이미지경로와이름확장자 문자열 저장
+          var imgsrcArray=imgsrc.split(".");//.을 기준으로 앞의 문자열과 뒤의 문자열을 각각 배열요소로 저.초
+          $(this).append("<img class='overImg' src="+imgsrcArray[0]+"_hover."+imgsrcArray[1]+" >");
+          $(this).children(".overImg").fadeIn();
+        },
+        function(){
+          $("#bestsellers div ul li a img.overImg").fadeOut(500,function(){
+            $(this).remove();
+          })
+        }
+      );
+
+      // bransStory 스크롤 제목이동
+      var brandstorySlide=548;
+      var brandTop=$("#brandstory").offset().top;
+      brandTop = brandTop-$(window).height();
+
+      var w=$(window).scrollTop();
+      // var bleft=$("#brandstory  div h2").offset().left; //문서를 기준으로        
+      var bleft= $("#brandstory div h2").position().left;  //상위를 기준으로
+      var delta= 0;
+
+      $(window).on("mousewheel DOMMouseScroll", function (e) {
+        e.preventDefault(); // =return false
+        delta = e.detail *4;
+        //alert("휠");
+      });
+
+      /* 휠이벤트를 하면 스크롤이벤트가 발행한다
+      그러나 스크롤이벤트하면 휠이벤트발생하지 않는다 */
+      var prevPosition = 0; // 스크롤방향
+      $(window).scroll(function(){
+
+        w=$(window).scrollTop();
+        var initPosition = $(this).scrollTop();  // 스크롤방향
+        if(w>=brandTop && w<=brandTop+$(window).height()){
+          if(initPosition > prevPosition){  // 스크롤방향
+            delta=12;
+            if(brandstorySlide>0){
+            brandstorySlide -=delta;  // 스크롤방향n
+            $("#brandstory > div h2").css("left",brandstorySlide);
+            }           
+          }else{
+            delta=-12;
+            brandstorySlide -=delta;  // 스크롤방향n
+            $("#brandstory > div h2").css("left",brandstorySlide);
+          }
+          prevPosition = initPosition;
+        }      
+      });
+      // 에너지 부분 이미지카운트
+      n2=$("#experience .slick-track li").length;
+      $("#experience .slick-dots").append("<span class='sum'></span>");
+      $("#experience .slick-dots .sum").text("/"+n2);
+    });
+  </script>
+  <!-- 스크롤이벤트AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    $(document).ready(
+      function(){
+        AOS.init();
+      }
+    );
+  </script>
+  <!-- 햄버거 팝업 / 버블애니 -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // 햄클릭 팝업창의 높이 조정
+      var gnbH = $(window).height();
+      var gnbW = $(window).width();
+      $("header .gnbw,header .gnb").css("height",gnbH).css("width",gnbW);
+      $("header .gnbw").css({"width":"0%"});
+
+      $(window).resize(function(){
+        gnbH = $(window).height();
+        gnbW = $(window).width();
+        $("header .gnbw,header .gnb").css("height",gnbH);
+        $("header .gnb").css("width",gnbW);
+      });
+      // 햄버튼 클릭시 gnb보이게
+      var n=0;
+      $("header .ham").click(function(){
+        $("header .gnbw").addClass("gnbZ");
+
+        if(n==0){
+          $("header .gnbw").animate({"width":"100%"},500);
+          n=1;
+        }else{
+          $("header .gnbw").animate({"width":"0%"},500);
+          n=0;
+        }
+        // 햄변형
+          $('.menu').toggleClass('is-active');
+        return false;
+      });
+
+      $('.gnbRightFade').slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 1000,
+        fade: true,
+        cssEase: 'linear'
+      });
+      
+      // 버블 애니
+      $(".scent .bubbles").wrap("<div class='bubblesWrap'></div>");
+
+      $(".ingredients").append("<span class='bubbles'></span>"); //오른쪽에 버블추가
+      $(".ingredients .bubbles").wrap("<div class='bubblesWrap'></div>"); //div로 감쌈
+      var bubb=function(){
+        var mx,my,mx2,my2;
+        var count=$(".scent .bubbles").length;
+        if(count>=10){
+          $(".scent .bubbles,.ingredients .bubbles").not(":nth-of-type(1)").fadeOut(500,function(){
+            $(this).remove();
+          });
+          // $(".scent").append("<span class='bubbles_l bubbles'></span>")
+          // console.log(count);
+        }else{
+          for(var i=1;i<3;i++){
+            mx=Math.random()*300+10;
+            my=Math.random()*300+Math.random()*10;
+            mx2=Math.random()*100+110;
+            my2=Math.random()*200+Math.random()*50;
+            $(".scent .bubbles:nth-of-type(1)").clone().appendTo("#designstory .scent .bubblesWrap").css({"position":"relative","left":mx,"top":-my});
+            $(".ingredients .bubbles:nth-of-type(1)").clone().appendTo("#designstory .ingredients .bubblesWrap").css({"position":"relative","left":mx2,"top":-my2});
+          }
+        }
+
+      }
+      setInterval(bubb,1000);
+
+    });
+  </script>
+</head>
+<body>
+  <!-- 상단 -->
+  <header>
+    <hgroup>
+      <h1><a href="">LIRIKOS</a></h1>
+      <h2>MARINE ENERGY</h2>
+    </hgroup>
+    <span>
+      <a href="">검색</a>
+      <a href="" class="ham menuWrapper">
+         <span class="hide">메뉴보기</span>
+         <div class="menu"></div>
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button> -->
+      </a>
+    </span>
+    <div class="gnbw">
+      <div class="gnb">
+      <div class="left">
+        <div>
+          <h2>PRODUCTS</h2>
+          <ul>
+            <li><a href="">WHAT′S NEW</a></li>
+            <li><a href="">BY CATEGORY</a></li>
+            <li><a href="">BY LINE</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>BRAND</h2>
+          <ul>
+            <li><a href="">BRAND STORY</a></li>
+            <li><a href="">INGREDIENTS</a></li>
+            <li><a href="">DESIGN STORY & SCENT</a></li>
+          </ul>
+        </div>
+        <span class="sns">
+          <a href="">페이스북</a>
+          <a href="">인스타그램</a>
+        </span>
+      </div>
+      <div class="right">
+        <ul class="gnbRightFade">
+          <li class="fadeList fadeList1">
+            <h3>FACIAL ERASER <span class="block"></span> CLEANSING OIL FOAM</h3>
+            <p>All-in-one cleansing oil form changes<span class="block"></span>
+              from oil to foam, from remover to cleanser</p>
+            <a href="">Discover More</a>
+          </li>
+          <li class="fadeList fadeList2">
+            <h3>TRUE AMPOULE <span class="block"></span> MASK</h3>
+            <p>Daily ampule mask for skin problems</p>
+            <a href="">Discover More</a>
+          </li>
+          <li class="fadeList fadeList3">
+            <h3>DEEP SEA <span class="block"></span> WATERFALL CREAM</h3>
+            <p>Deep Sea Waterfall Cream, such as water ions<span class="block"></span>
+              that will quench my skin's thirs</p>
+            <a href="">Discover More</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </header>
+  <!-- 타이틀 -->
+    <div id="title">
+      <div class="w1000">
+        <ul class="titleFade">
+          <li class="titlelist title1">
+            <h3 data-aos="fade-right">
+              BALANCING<span class= "block">EMULSION</span>
+              <span class= "block">with DEEP SEA SALT</span>
+            </h3>
+            <p data-aos="fade-left">The water splashing emulsion that quickly absorbs on the skin with smooth texture.</p>        
+            <a class="dmore" href="" data-aos="fade-up">
+              <span class="more">Discover more</span>
+              <span class="arrow" data-aos="fade-left">
+                <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="30" y1="8" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    <line x1="90" y1="0" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    <line x1="90" y1="16" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                  </g>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="titlelist title2">
+            <h3>TRUE AMPOULE<span class= "block">MASK</span></h3>
+            <p>Daily skin care with sheet mask depending on your skin condition</p>
+            <a class="dmore" href="" data-aos="fade-up">
+              <span class="more">Discover more</span>
+              <span class="arrow" data-aos="fade-left">
+                <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="30" y1="8" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    <line x1="90" y1="0" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    <line x1="90" y1="16" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                  </g>
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- 컨텐츠 -->
+  <main>
+    <section id="bestsellers">
+      <div class="bestlist">
+        <h2 class="h2">BESTS ELLERS</h2>
+        <ul>
+          <li data-aos="fade-up">
+            <a href="">
+              <img src="img/facial-eraser-cleansing-foam.jpg" alt="FACIAL ERASER CLEANSING FOAM<">
+              <h3>FACIAL ERASER CLEANSING FOAM</h3>
+            </a>
+          </li>
+          <li data-aos="fade-up">
+            <a href="">
+              <img src="img/deep-sea-waterfall-toner.jpg" alt="DEEP SEA WATERFALL TONER">
+              <h3>DEEP SEA WATERFALL TONER</h3>
+            </a>
+          </li>
+          <li data-aos="fade-up">
+            <a href="">
+              <img src="img/facial-eraser-cleansing-oil-foam.jpg" alt="FACIAL ERASER CLEANSING OIL FOAM">
+              <h3>FACIAL ERASER CLEANSING OIL FOAM</h3>
+            </a>
+          </li>
+          <li data-aos="fade-up">
+            <a href="">
+              <img src="img\01_true-ampoule-mask.jpg" alt="TRUE AMPOULE MASK">
+              <h3>TRUE AMPOULE MASK</h3>
+            </a>
+          </li>
+          <li data-aos="fade-up">
+            <a href="">
+              <img src="img/3-minute-clay-mask.jpg" alt="3-MINUTE CLAY MASK">
+              <h3>3-MINUTE CLAY MASK</h3>
+            </a>
+          </li>
+          <li data-aos="fade-up">
+            <a href="">
+              <img src="img/deep-sea-waterfall-cream.jpg" alt="DEEP SEA WATERFALL CREAM<">
+              <h3>DEEP SEA WATERFALL CREAM</h3>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="gooey"></a>
+      </div>
+    </section>
+    <section id="brandstory">
+      <div>
+        <h2>BRAND STORY</h2>
+        <ul>
+          <li>
+            <h3>MARINE ENERGY HAS BEGUN FROM <span class="block"></span> THE SECRET OF THE MARINE PLANTS.</h3>
+            <p>
+              Even if seaweeds are rubbed by rough waves hither and thither, they are damaged but they remain moist and elastic.<span class="block"></span>
+              “Wouldn’t it be great if we can deliver this surprising energy of marine plants into the skin in its entirety?”<span class="block"></span>
+              Thus begun LIRIKOS Marine Energy’s research on the powers of algae.
+            </p>
+            <a class="dmore" href="" data-aos="fade-up">
+              <span class="more">Discover more</span>
+              <span class="arrow">
+                <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="30" y1="8" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                    <line x1="90" y1="0" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                    <line x1="90" y1="16" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                  </g>
+                </svg>
+              </span>
+            </a>           
+          </li>
+          <li>
+            <h3>THE SECRET OF MARINE ENERGY</h3>
+            <p>
+              The source of vitality contained in marine plant is a fermented seaweed component<span class="block"></span>
+              created from the symbiosis between seaweed and microorganisms.<span class="block"></span>
+              It enhances the skin's strength based on moisture, skin stress relief and skin barrier enhancement effects.<span class="block"></span>
+              Lirikos's long hours of study to extract and optimize this component on human skin has come to fruition.<span class="block"></span>
+            </p>
+            <a class="dmore" href="" data-aos="fade-up">
+              <span class="more">Discover more</span>
+              <span class="arrow">
+                <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="30" y1="8" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                    <line x1="90" y1="0" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                    <line x1="90" y1="16" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                  </g>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li>
+            <h3>MARINE LAB</h3>
+            <p>
+              Marine Lab has put in advanced technology and long-term efforts in order<span class="block"></span>
+              to discover the source of algae’s strong vitality and how to return the skin to its optimal state.
+            </p>
+            <a class="dmore" href="" data-aos="fade-up">
+              <span class="more">Discover more</span>
+              <span class="arrow">
+                <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                  <g>
+                    <line x1="30" y1="8" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                    <line x1="90" y1="0" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                    <line x1="90" y1="16" x2="100" y2="8" stroke="#fff" stroke-width="1"></line>
+                  </g>
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div class="bravdvideo">
+          <video preload="none" autoplay loop muted controls>
+            <source src="http://www.lirikosmarine.com/int/en/manage/main_conts/branddesigen/__icsFiles/afieldfile/2019/02/27/main-brand.mp4
+              " type/mp4>
+          </video>
+        </div>
+      </div>
+     </section>
+    <section id="designstory">
+      <div class="scent">
+        <a href="">
+          <h2>DESIGN STORY & SCENT</h2>
+          <p>Feel the ocean with your eyes,<span class="block">
+            the fragrance,and your hear</span>
+          </p>
+        </a>
+        <span class="bubbles_l bubbles"></span>
+      </div>
+      <div class="ingredients">
+        <a href="">
+          <h2>INGREDIENTS</h2>
+          <p>Find out the hidden infinite<span class="block">
+            possibilities of the ocean</span>
+          </p>
+        </a>
+      </div>
+      <span class="wave">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+    </section>
+    <section id="experience">
+      <div>
+        <h2 class="h2">EXPERIENCE<span class="block"></span>
+          LIRIKOS<span class="block"></span> MARINE ENERGY
+        </h2>
+        <ul class="infade">
+          <li>
+            <img src="img/energy1.jpg" alt="">
+            <div class="right">
+              <h3>TRUE AMPOULE MASK</h3>
+              <p>my skin is getting better after using this <span class="block"></span>mask.It made my skin feel hydrated and smooth. 
+                <span class="block"></span>Better make-up after this.</p>
+              <a class="dmore" href="" data-aos="fade-up">
+                <span class="more">Discover more</span>
+                <span class="arrow">
+                  <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                    <g>
+                      <line x1="30" y1="8" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                      <line x1="90" y1="0" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                      <line x1="90" y1="16" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <img src="img/energy2.jpg" alt="">
+            <div class="right">
+              <h3>FACIAL ERASER <span class="block"></span>CLEANSING OIL FOAM</h3>
+              <p>I've already bought it several times.<span class="block"></span> It's moist and mild, and good enough
+                <span class="block"></span> to recommend to others. Both oily and dry skin can use it.</p>
+              <a class="dmore" href="" data-aos="fade-up">
+                <span class="more">Discover more</span>
+                <span class="arrow">
+                  <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                    <g>
+                      <line x1="30" y1="8" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                      <line x1="90" y1="0" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                      <line x1="90" y1="16" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <img src="img/energy3.jpg" alt="">
+            <div class="right">
+              <h3>FACIAL ERASER <span class="block"></span>CLEANSING OIL FOAM</h3>
+              <p>Its sample was so good that's why I purchased it.<span class="block"></span> Cleansing oil and cleansing foam function 
+                <span class="block"></span>at the same time makes it really comfortable and good.</p>
+              <a class="dmore" href="" data-aos="fade-up">
+                <span class="more">Discover more</span>
+                <span class="arrow">
+                  <svg id="arrowsvg" xmlns="http://www.w3.org/2000/svg" width="120px" height="16px" viewBox="0 0 120 16" preserveAspectRatio="xMidYMid meet">
+                    <g>
+                      <line x1="30" y1="8" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                      <line x1="90" y1="0" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                      <line x1="90" y1="16" x2="100" y2="8" stroke="#999" stroke-width="1"></line>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <span class="wave">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </div>
+    </section>
+  </main>
+  <!-- 하단 -->
+  <footer>
+    <div>
+      <ul class="list">
+        <li><a href="">About us</a></li>
+        <li><a href="">Terms and Conditions</a></li>
+        <li><a href="">Sitemap</a></li>
+      </ul>
+      <ul class="sns">
+        <li><a href="">페이스북</a></li>
+        <li><a href="">인스타그램</a></li>
+      </ul>
+      <p>© AMOREPACIFIC CORPORATION. All rights reserved.</p>
+      <select>
+
+      </select>
+    </div>
+  </footer>
+  <p>
+    <a href="http://validator.kldp.org/check?uri=referer"
+      onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))"><img
+      src="//validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80"></a>
+  </p>
+</body>
+</html>
